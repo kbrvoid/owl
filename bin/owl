@@ -2,6 +2,7 @@
 
 var searchCommand = require('../lib/search');
 var helpCommand = require('../lib/help');
+var publishCommand = require('../lib/publish');
 
 console.log('\x1b[36m', '======= OWL =======' ,'\x1b[0m');
 
@@ -14,6 +15,8 @@ if(commandArg == 'search') {
     console.log('\x1b[32m', 'Owl is a simple command line tool...\n Try:' , '\x1b[35m', 'owl help', '\x1b[0m');
 } else if(commandArg == 'help') {
     helpCommand();
+} else if(commandArg == 'publish') {
+    publishCommand();
 } else {
  console.log('\x1b[31m', 'ERROR:', '\x1b[0m', 'Owl can\'t find that command!' );  
 }
