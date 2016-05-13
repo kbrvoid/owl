@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "owl": "index.js"
+    "owl": "bin/owl"
   },
   "author": "Kabir Shah",
   "license": "MIT"
