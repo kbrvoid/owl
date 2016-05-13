@@ -6,6 +6,7 @@ var publishCommand = require('../lib/publish');
 var copyCommand = require('../lib/copy');
 var makeCommand = require('../lib/make');
 var exec = require('child_process').exec;
+var taskCommand = require('../lib/task');
 
 console.log('\x1b[36m', '======= OWL =======' ,'\x1b[0m');
 
@@ -25,9 +26,13 @@ if(commandArg == 'search') {
 } else if(commandArg == 'make') {
     makeCommand(process.argv.slice(3));
 } else if(commandArg == 'task') {
-        exec('node Owlfile.js', function(err, stdout, stderr) {
-        console.log('\x1b[32m', 'Owl is Running A Task' ,'\x1b[0m');
-    });
+    taskCommand(process.argv.slice(3)[0])
 } else {
  console.log('\x1b[31m', 'ERROR:', '\x1b[0m', 'Owl can\'t find that command!' );  
 }
+
+exports.cli = taskCommand.cli;
+exports.error = taskCommand.error;
+exports.run = taskCommand.run;
+exports.task = taskCommand.task;
+

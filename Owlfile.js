@@ -1,4 +1,4 @@
-var owl = require('./lib/task');
+var owl = require('./index.js');
 
 function foo() {
 	console.log('should run default task');
