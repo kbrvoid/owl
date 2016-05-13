@@ -4,6 +4,7 @@ var searchCommand = require('../lib/search');
 var helpCommand = require('../lib/help');
 var publishCommand = require('../lib/publish');
 var copyCommand = require('../lib/copy');
+var makeCommand = require('../lib/make');
 
 console.log('\x1b[36m', '======= OWL =======' ,'\x1b[0m');
 
@@ -20,6 +21,8 @@ if(commandArg == 'search') {
     publishCommand();
 } else if(commandArg == 'copy') {
     copyCommand(process.argv.slice(3), process.argv.slice(4));
+} else if(commandArg == 'make') {
+    makeCommand(process.argv.slice(3));
 } else {
  console.log('\x1b[31m', 'ERROR:', '\x1b[0m', 'Owl can\'t find that command!' );  
 }
