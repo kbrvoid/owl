@@ -6,7 +6,8 @@ var publishCommand = require('../lib/publish');
 var copyCommand = require('../lib/copy');
 var makeCommand = require('../lib/make');
 //var exec = require('child_process').exec;
-var taskCommand = require('../lib/task');
+//var taskCommand = require('../lib/task');
+var scaffoldCommand = require('../lib/scaffold')
 
 console.log('\x1b[36m', '======= OWL =======' ,'\x1b[0m');
 
@@ -27,10 +28,11 @@ if(commandArg == 'search') {
     makeCommand(process.argv.slice(3));
 } else if(commandArg == 'task') {
     //taskCommand();
+} else if(commandArg == 'scaffold') {
+    scaffoldCommand(process.argv.slice(3));
 } else {
- console.log('\x1b[31m', 'ERROR:', '\x1b[0m', 'Owl can\'t find that command!' );  
+ console.log('\x1b[31m', 'ERROR:', '\x1b[0m', 'Owl can\'t find that command!' );
 }
 
 //exports.run = taskCommand.run;
-exports.task = taskCommand.task;
-
+//exports.task = taskCommand.task;
